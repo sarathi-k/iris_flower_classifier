@@ -1,0 +1,21 @@
+<!-- templates/after.html -->
+<html>
+<head>
+    <title>Prediction Result</title>
+</head>
+<body>
+    <h1>Prediction</h1>
+    <p>The predicted class is: {{ data[0] }}</p>
+
+    {% if data[0] == 0 %}
+        <img src="{{ url_for('static', filename='setosa.jpg') }}" alt="Iris Setosa" width="300">
+        <p>This is likely an Iris Setosa 🌸</p>
+    {% elif data[0] == 1 %}
+        <img src="{{ url_for('static', filename='verci.jpg') }}" alt="Iris Versicolor" width="300">
+        <p>This is likely an Iris Versicolor 🌿</p>
+    {% elif data[0] == 2 %}
+        <img src="{{ url_for('static', filename='flower1.jpg')}}" alt="IRIS Versicolor" width="300">
+        <p>This is likely an Iris Virginica 💐</p>
+    {% endif %}
+</body>
+</html>
